@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Parlamentar | Coronel Fernanda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --verde-bandeira: #009b3a;
+            --amarelo-ouro: #fedf00;
+            --azul-anil: #002776;
+            --branco: #ffffff;
+            --cinza-fundo: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cinza-fundo);
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: var(--verde-bandeira);
+            color: var(--branco);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--amarelo-ouro);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Card do Mapa */
+        .map-card {
+            background: var(--branco);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .map-placeholder {
+            background: #e0e0e0;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--verde-bandeira);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder i {
+            font-size: 5rem;
+            color: var(--verde-bandeira);
+            opacity: 0.3;
+        }
+
+        /* Tabelas e Rankings */
+        .ranking-card {
+            background: var(--branco);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--verde-bandeira);
+            border-left: 5px solid var(--amarelo-ouro);
+            padding-left: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th {
+            background-color: var(--verde-bandeira);
+            color: var(--branco);
+            text-align: left;
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        tr:hover {
+            background-color: rgba(0, 155, 58, 0.05);
+        }
+
+        .badge {
+            background: var(--amarelo-ouro);
+            color: var(--azul-anil);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .perc {
+            color: var(--verde-bandeira);
+            font-weight: bold;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Coronel Fernanda</h1>
+    <p>Deputada Federal | Mato Grosso</p>
+</header>
+
+<div class="container">
+    
+    <div class="map-card">
+        <h2><i class="fas fa-map-marked-alt"></i> Mapa de Atuação - MT</h2>
+        <div class="map-placeholder">
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Mapa Interativo de Mato Grosso</p>
+                <small>(Divisão por Microregiões)</small>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <p><strong>Total de Municípios:</strong> 141</p>
+            <p><strong>Presença em:</strong> 100% do Estado</p>
+        </div>
+    </div>
+
+    <div class="ranking-card">
+        
+        <h2><i class="fas fa-vote-yea"></i> Top 5: Mais Votadas (Geral)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cidade</th>
+                    <th>Votos Totais</th>
+                    <th>Posição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cuiabá</td>
+                    <td>45.230</td>
+                    <td><span class="badge">1º</span></td>
+                </tr>
+                <tr>
+                    <td>Várzea Grande</td>
+                    <td>22.150</td>
+                    <td><span class="badge">2º</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Rondonópolis</strong></td>
+                    <td>18.440</td>
+                    <td><span class="badge">3º</span></td>
+                </tr>
+                <tr>
+                    <td>Sinop</td>
+                    <td>15.800</td>
+                    <td><span class="badge">4º</span></td>
+                </tr>
+                <tr>
+                    <td>Sorriso</td>
+                    <td>10.200</td>
+                    <td><span class="badge">5º</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 style="margin-top: 2.5rem;"><i class="fas fa-chart-line"></i> Ranking Proporcional (% Eleitores)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cidade</th>
+                    <th>Penetração (%)</th>
+                    <th>Impacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Campo Novo do Parecis</td>
+                    <td class="perc">12.5%</td>
+                    <td>Altíssimo</td>
+                </tr>
+                <tr>
+                    <td>Primavera do Leste</td>
+                    <td class="perc">10.2%</td>
+                    <td>Alto</td>
+                </tr>
+                <tr>
+                    <td>Lucas do Rio Verde</td>
+                    <td class="perc">8.7%</td>
+                    <td>Alto</td>
+                </tr>
+                <tr>
+                    <td>Tangará da Serra</td>
+                    <td class="perc">7.9%</td>
+                    <td>Consolidado</td>
+                </tr>
+                <tr>
+                    <td>Barra do Garças</td>
+                    <td class="perc">6.4%</td>
+                    <td>Em crescimento</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Gabinete Parlamentar Coronel Fernanda - Desenvolvido Lorraini Bandeira.</p>
+</footer>
+
+</body>
+</html>

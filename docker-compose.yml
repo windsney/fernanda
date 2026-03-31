@@ -1,0 +1,32 @@
+services:
+  db_fernanda:
+    image: postgres:14-alpine
+    container_name: fernanda_db
+    volumes:
+    - fernanda_postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: django_db
+      POSTGRES_USER: django_user
+      POSTGRES_PASSWORD: indio2272
+    restart: always
+
+  web:
+    image: windsney/fernanda:latest
+    #build: .
+    container_name: fernanda_app
+    ports:
+      - "8003:8000"
+    environment:
+      SECRET_KEY: 'django-insecure-$$=lbe$$n$$hwdov-14(hc@939mgdf_1#o-f883b@$$jg3(@1v^u+m'
+      DEBUG: 'False'
+      DB_NAME: django_db
+      DB_USER: django_user
+      DB_PASSWORD: indio2272
+      DB_HOST: db_fernanda  # <--- AGORA COMBINA COM O NOME ACIMA
+      DB_PORT: 5432
+    depends_on:
+      - db_fernanda          # <--- AGORA COMBINA COM O NOME ACIMA
+    restart: always
+
+volumes:
+  fernanda_postgres_data:    # <--- AGORA COMBINA COM O NOME NO SERVIÇO:
