@@ -5,6 +5,9 @@ from django.views.generic import TemplateView,ListView,DetailView
 class Index(TemplateView):
     template_name = 'app/index.html'
 
+class Teste(TemplateView):
+    template_name = 'app/mapa_votos_final.html'
+
 '''
 class ListaItensView(ListView):
     model = MinhaModel

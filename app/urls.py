@@ -1,9 +1,10 @@
 from django.urls import path
-from .views import Index
+from .views import Index,Teste
 
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
+    path('teste', Teste.as_view(), name='teste'),
    
 # CBV básica
     #path('minhaview/', MinhaView.as_view(), name='minha-view'),

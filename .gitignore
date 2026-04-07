@@ -20,7 +20,11 @@ env/
 # OS
 .DS_Store
 Thumbs.db
-
+# Arquivos de dados pesados
+*.csv
+*.zip
+*.rar
+Nova pasta/
 # Node/Webpack
 node_modules/
 npm-debug.log*
